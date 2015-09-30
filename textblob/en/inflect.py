@@ -62,7 +62,6 @@ plural_rules = [
     # 4) Words that do not inflect.
     [["$", "", "uninflected", False],
      ["$", "", "uncountable", False],
-     ["s$", "s", "s-singular", False],
      ["fish$", "fish", None, False],
      ["([- ])bass$", "\\1bass", None, False],
      ["ois$", "ois", None, False],
@@ -140,6 +139,7 @@ plural_rules = [
     # 9) -ch, -sh and -ss take -es in the plural (churches, classes).
     [["([cs])h$", "\\1hes", None, False],
      ["ss$", "sses", None, False],
+     ["s$", "ses", "s-singular", False],
      ["x$", "xes", None, False]
     ],
     # 10) Certain words ending in -f or -fe take -ves in the plural (lives, wolves).
@@ -182,13 +182,13 @@ plural_categories = {
         "measles", "mews", "mumps", "news", "pincers", "pliers", "proceedings", "rabies", "salmon",
         "scissors", "series", "shears", "species", "swine", "trout", "tuna", "whiting", "wildebeest"],
     "uncountable": [
-        "advice", "bread", "butter", "cheese", "electricity", "equipment", "fruit", "furniture",
+        "advice", "bread", "butter", "cannabis", "cheese", "electricity", "equipment", "fruit", "furniture",
         "garbage", "gravel", "happiness", "information", "ketchup", "knowledge", "love", "luggage",
         "mathematics", "mayonnaise", "meat", "mustard", "news", "progress", "research", "rice",
         "sand", "software", "understanding", "water"],
     "s-singular": [
-        "acropolis", "aegis", "alias", "asbestos", "bathos", "bias", "caddis", "cannabis", "canvas",
-        "chaos", "cosmos", "dais", "digitalis", "epidermis", "ethos", "gas", "glottis", "glottis",
+        "acropolis", "aegis", "alias", "asbestos", "bathos", "bias", "caddis", "canvas",
+        "chaos", "christmas", "cosmos", "dais", "digitalis", "epidermis", "ethos", "gas", "glottis",
         "ibis", "lens", "mantis", "marquis", "metropolis", "pathos", "pelvis", "polis", "rhinoceros",
         "sassafras", "trellis"],
     "ex-ices": ["codex", "murex", "silex"],
@@ -323,7 +323,7 @@ singular_rules = [
     ['(?i)(o)es$', '\\1'],
     ['(?i)(bus)es$', '\\1'],
     ['(?i)([m|l])ice$', '\\1ouse'],
-    ['(?i)(x|ch|ss|sh)es$', '\\1'],
+    ['(?i)(x|ch|s|sh)es$', '\\1'],
     ['(?i)(m)ovies$', '\\1ovie'],
     ['(?i)(.)ombies$', '\\1ombie'],
     ['(?i)(s)eries$', '\\1eries'],
