@@ -379,6 +379,7 @@ singular_ie = [
     "pixie", "quickie", "reverie", "rookie", "softie", "sortie", "stoolie", "sweetie", "techie",
     "^tie", "toughie", "valkyrie", "veggie", "weenie", "yuppie", "zombie"
 ]
+# key plural: val singular
 singular_irregular = {
             "men": "man",
          "people": "person",
